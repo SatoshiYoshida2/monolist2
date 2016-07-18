@@ -33,6 +33,7 @@ gem 'bootstrap-sass'
 # https://github.com/rakuten-ws/rws-ruby-sdk
 gem 'rakuten_web_service'
 
+gem 'kaminari'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

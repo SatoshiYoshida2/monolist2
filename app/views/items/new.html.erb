@@ -10,7 +10,9 @@
       <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
       気になったアイテムが欲しければ「Want」持ってれば「Have」しましょう
     </div>
+    <div class="list"><%= paginate @items %></list>
     <%= render 'items' , items: @items %>
+    <div class="list"><%= paginate @items %></list>
   <% elsif params[:q].present? %>
     <div class="alert alert-danger">
       <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
