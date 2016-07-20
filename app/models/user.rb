@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def have(item)
-    haves.create(item_id item.id)
+    haves.create(item_id: item.id)
   end
 
   def unhave(item)
@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def have?(item)
-    hwves.include?(item)
+    haves.include?(item)
   end
 
   def want(item)
