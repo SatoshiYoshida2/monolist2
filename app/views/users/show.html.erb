@@ -1,3 +1,8 @@
+<% content_for :head do %>
+<title><%= @user.name %> - monolist</title>
+<description><%= @user.name %>のモノページ。<%= @user.name %>の欲しいモノとその数、持ってるモノとその数、フォロー数、フォロワー数を表示しています。</description>
+<% end %>
+
 <%= render 'profile' , user: @user %>
 
 
