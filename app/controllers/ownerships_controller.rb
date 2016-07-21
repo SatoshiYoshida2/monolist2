@@ -16,9 +16,17 @@ class OwnershipsController < ApplicationController
 
       item                  = items.first
       @item.title           = item['itemName']
-      @item.small_image     = item['smallImageUrls'].first['imageUrl']
-      @item.medium_image    = item['mediumImageUrls'].first['imageUrl']
-      @item.large_image     = item['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '')
+      
+      if item['imageFlag'] == 1 
+        @item.small_image     = item['smallImageUrls'].first['imageUrl']
+        @item.medium_image    = item['mediumImageUrls'].first['imageUrl']
+        @item.large_image     = item['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '')
+      else
+        @item.small_image     = "no-image.png"
+        @item.medium_image    = "no-image.png"
+        @item.large_image     = "no-image.png"
+      end
+      
       @item.detail_page_url = item['itemUrl']
       @item.save!
     end
