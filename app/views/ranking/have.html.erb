@@ -1,0 +1,8 @@
+<% content_for :head do %>
+<title>欲しいものランキング - monolist</title>
+<description>欲しいものランキングのページ。欲しいものの多い順のアイテム上位10個を表示しています。</description>
+<% end %>
+<div class="ranking">
+  <h1>欲しいものランキング</h1>
+</div>
+<%= render 'items' , items: @items %>
