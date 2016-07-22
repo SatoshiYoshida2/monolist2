@@ -16,6 +16,11 @@
       <div class="side-box">
         <h4 class="side-box-title"><%= count+1 %>位</h4>
         <div class="side-box-body">
+          <% if type == "have" %>
+            <%= item.have_users.count %>人が持っています
+          <% else %>
+            <%= item.want_users.count %>人が欲しいと思っています
+          <% end %>  
         </div>
       </div>
       <div class="text-center">
