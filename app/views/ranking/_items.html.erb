@@ -1,3 +1,4 @@
+<% rank = 1 ,user_count = 0 %>
 <% items.each_with_index do |item,count| %>
 <div class="container">
   <div class="container-inner inner-sm clearfix">
@@ -14,12 +15,23 @@
     </div>
     <div class="item-single-side">
       <div class="side-box">
-        <h4 class="side-box-title"><%= count+1 %>位</h4>
+        <% if type == "have" %>
+          <% if user_count != item.have_users.count %>
+            <% rank = count + 1 %>
+          <% end %>
+          <% user_count = item.have_users.count %>
+        <% else %>
+          <% if user_count != item.want_users.count %>
+            <% rank = count + 1 %>
+          <% end %>
+          <% user_count = item.want_users.count %>
+        <% end %>
+        <h4 class="side-box-title"><%= rank %>位</h4>
         <div class="side-box-body">
           <% if type == "have" %>
-            <%= item.have_users.count %>人が持っています
+            <%= user_count %>人が持っています
           <% else %>
-            <%= item.want_users.count %>人が欲しいと思っています
+            <%= user_count %>人が欲しいと思っています
           <% end %>  
         </div>
       </div>
